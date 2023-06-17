@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main{
+    width: 400px;
+    height: 550px;
+    color: white;
+    background-color: rgb(5, 5, 5);
+}
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.foto{
+    width: 150px;
+    height: 165px;
+    border: solid 1px white;
+    margin-top: 2;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: grey;
+    display: inline-block;
+    position: relative;
+}
+
+.els{
+    display: inline-block;
+    position: absolute;
+}
+
+.container1 > *{
+    display: block;
+}
+
+.first input{
+    width: 217px;
+    margin-bottom: 20px;
+}
+
+.first{
+    height: 190px;
+}
+
+.second{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.second .container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input{
+    height: 25px;
+    width: 380px;
+}
+
