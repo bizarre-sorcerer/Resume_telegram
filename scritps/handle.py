@@ -1,24 +1,9 @@
 import io
 from collections import defaultdict
-
-import db
 import pdfkit
-import settings
 from jinja2 import Environment, select_autoescape, FileSystemLoader
-
-import uuid
-import ujson
-
-
-def create_resume(**kwargs) -> str:
-    id_ = str(uuid.uuid4())
-    _write(id_, **kwargs)
-    return id_
-
-def _write(id_: str, **kwargs) -> None:
-    with open(f'{settings.BASE_DB_FOLDER}/asdf.json', 'w') as file:
-        file.write(ujson.dumps(kwargs))
-
+import scritps.settings as settings
+from scritps.db import *; 
 
 
 file_loader = FileSystemLoader('templates')
@@ -27,11 +12,9 @@ env = Environment(
     autoescape=select_autoescape(),
 )
 
-
 def get(filepath: str, context: dict) -> str:
     template = env.get_template(filepath)
     return template.render(context)
-
 
 def convert_pdf(resume: dict):
     options = {
@@ -53,7 +36,6 @@ def convert_pdf(resume: dict):
         configuration=settings.config,
         options=options,
     )
-
 
 def generate_resume_file(resume: dict) -> io.BytesIO:
     create_resume(**resume)

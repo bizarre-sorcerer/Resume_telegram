@@ -30,3 +30,5 @@ BASE_PATH = os.path.dirname(__file__)
 MEDIA_URL = os.path.join(BASE_PATH, 'media')
 
 BIRTH_DATE_FORMAT = 'dd-mm-yyyy'
+
+TOKEN = "5967331395:AAHAUexUYWfnRTG5953gPtlaPamh5c4aIbg"
